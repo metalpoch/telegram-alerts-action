@@ -1,0 +1,37 @@
+name: Telegram Alerts
+description: Alarm message generator for Telegram
+inputs:
+  bot-token-id:
+    description: Bot token ID
+    required: true
+  chat-id: 
+    description: Unique identifier for the target chat or username
+    required: true
+  text:
+    description: Text of the message to be sent
+    required: true
+  parse-mode:
+    description: Send Markdown, MarkdownV2 or HTML
+    required: true
+    default: MarkdownV2
+  disable-web-page-preview:
+    description: Disables link previews for links in this message
+    required: true
+    default: false
+  disable-notification:
+    description: Sends the message silently
+    required: true
+    default: false
+outputs:
+  response:
+    description: Alert response
+runs:
+  using: docker
+  image: Dockerfile
+  args:
+    - ${{ inputs.bot-token-id }}
+    - ${{ inputs.chat-id }} 
+    - ${{ inputs.text }} 
+    - ${{ inputs.parse-mode }} 
+    - ${{ inputs.disable-web-page-preview }} 
+    - ${{ inputs.disable-notification }}
