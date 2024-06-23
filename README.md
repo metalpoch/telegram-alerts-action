@@ -30,7 +30,7 @@ A JSON of the alert response
 ## Example usage
 
 ```yaml
-uses: metalpoch/telegram-alerts-action@v4
+uses: metalpoch/telegram-alerts-action@v1
 with:
   bot-token-id: ${{ secrets.TELEGRAM_TOKEN_ID }}
   chat-id: ${{ secrets.TELEGRAM_CHAT_ID }}
