@@ -1,5 +1,7 @@
 name: Telegram Alerts
 description: Alarm message generator for Telegram
+color: purple
+icon: message-circle
 inputs:
   bot-token-id:
     description: Bot token ID
